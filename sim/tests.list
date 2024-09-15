@@ -1,0 +1,5 @@
+./programs/testrom.asm
+./programs/matrix_multiply.asm
+./programs/matrix_multiply_8x8.asm
+./programs/matrix_multiply_9x9.asm
+./programs/factorial.asm

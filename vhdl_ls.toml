@@ -1,0 +1,6 @@
+[libraries]
+
+lib1.files = [
+    './components/**/*.vhd',
+    './testbenches/**/*.vhd'
+]

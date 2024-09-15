@@ -1,0 +1,77 @@
+Mnemonic,Category,Opcode/Func,Instruction Type,id_immediate_type,ex_in1_a_npc_n,ex_in2_b_imm_n,ex_sel_arith,ex_multicycle_op,ex_alu_op,ex_branch_type,mm_rd_request,mm_wr_request,mm_data_type,wb_rf_wr_enable,wb_rf_datain,wb_is_jal
+addi,Arithmetic,0x08,I-Type,Signed,A,Immediate,ALU,None,add,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+addui,Arithmetic,0x09,I-Type,Unsigned,A,Immediate,ALU,None,add,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+subi,Arithmetic,0x0a,I-Type,Signed,A,Immediate,ALU,None,sub,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+subui,Arithmetic,0x0b,I-Type,Unsigned,A,Immediate,ALU,None,sub,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+beqz,Branch,0x04,I-Type,Signed,NPC,Immediate,ALU,None,add,JumpIfZero,FALSE,FALSE,Word,FALSE,Don't Care,FALSE
+bnez,Branch,0x05,I-Type,Signed,NPC,Immediate,ALU,None,add,JumpIfNotZero,FALSE,FALSE,Word,FALSE,Don't Care,FALSE
+jalr,Branch,0x13,I-Type,Don't Care,A,Don't Care,ALU,None,nop,Always,FALSE,FALSE,Word,TRUE,NPC,TRUE
+jr,Branch,0x12,I-Type,Don't Care,A,Don't Care,ALU,None,nop,Always,FALSE,FALSE,Word,FALSE,Don't Care,FALSE
+seqi,Comparison,0x18,I-Type,Signed,A,Immediate,ALU,None,seq,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sgei,Comparison,0x1d,I-Type,Signed,A,Immediate,ALU,None,sge,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sgeui,Comparison,0x3d,I-Type,Unsigned,A,Immediate,ALU,None,sgeu,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sgti,Comparison,0x1b,I-Type,Signed,A,Immediate,ALU,None,sgt,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sgtui,Comparison,0x3b,I-Type,Unsigned,A,Immediate,ALU,None,sgtu,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+slei,Comparison,0x1c,I-Type,Signed,A,Immediate,ALU,None,sle,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sleui,Comparison,0x3c,I-Type,Unsigned,A,Immediate,ALU,None,sleu,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+slti,Comparison,0x1a,I-Type,Signed,A,Immediate,ALU,None,slt,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sltui,Comparison,0x3a,I-Type,Unsigned,A,Immediate,ALU,None,sltu,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+snei,Comparison,0x19,I-Type,Signed,A,Immediate,ALU,None,sne,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+andi,Logic,0x0c,I-Type,Unsigned,A,Immediate,ALU,None,and,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+ori,Logic,0x0d,I-Type,Unsigned,A,Immediate,ALU,None,or,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+xori,Logic,0x0e,I-Type,Unsigned,A,Immediate,ALU,None,xor,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+lb,Memory,0x20,I-Type,Signed,A,Immediate,ALU,None,add,Never,TRUE,FALSE,Signed Byte,TRUE,Memory,FALSE
+lbu,Memory,0x24,I-Type,Signed,A,Immediate,ALU,None,add,Never,TRUE,FALSE,Byte,TRUE,Memory,FALSE
+lh,Memory,0x21,I-Type,Signed,A,Immediate,ALU,None,add,Never,TRUE,FALSE,Signed Halfword,TRUE,Memory,FALSE
+lhu,Memory,0x25,I-Type,Signed,A,Immediate,ALU,None,add,Never,TRUE,FALSE,Halfword,TRUE,Memory,FALSE
+lw,Memory,0x23,I-Type,Signed,A,Immediate,ALU,None,add,Never,TRUE,FALSE,Word,TRUE,Memory,FALSE
+sb,Memory,0x28,I-Type,Signed,A,Immediate,ALU,None,add,Never,FALSE,TRUE,Signed Byte,FALSE,Don't Care,FALSE
+sh,Memory,0x29,I-Type,Signed,A,Immediate,ALU,None,add,Never,FALSE,TRUE,Signed Halfword,FALSE,Don't Care,FALSE
+sw,Memory,0x2b,I-Type,Signed,A,Immediate,ALU,None,add,Never,FALSE,TRUE,Word,FALSE,Don't Care,FALSE
+lhi,Other,0x0f,I-Type,Unsigned,A,Immediate,ALU,None,lhi,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+nop,Other,0x15,I-Type,Don't Care,Don't Care,Don't Care,Don't Care,None,nop,Never,FALSE,FALSE,Word,FALSE,Don't Care,FALSE
+slli,Shift,0x14,I-Type,Signed,A,Immediate,ALU,None,sll,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+srai,Shift,0x17,I-Type,Signed,A,Immediate,ALU,None,sra,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+srli,Shift,0x16,I-Type,Signed,A,Immediate,ALU,None,srl,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+j,Branch,0x02,J-Type,Signed,NPC,Immediate,ALU,None,add,Always,FALSE,FALSE,Word,FALSE,Don't Care,FALSE
+jal,Branch,0x03,J-Type,Signed,NPC,Immediate,ALU,None,add,Always,FALSE,FALSE,Word,TRUE,NPC,TRUE
+add,Arithmetic,0x20,R-Type,Don't Care,A,B,ALU,None,add,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+addu,Arithmetic,0x21,R-Type,Don't Care,A,B,ALU,None,add,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sub,Arithmetic,0x22,R-Type,Don't Care,A,B,ALU,None,sub,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+subu,Arithmetic,0x23,R-Type,Don't Care,A,B,ALU,None,sub,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+seq,Comparison,0x28,R-Type,Don't Care,A,B,ALU,None,seq,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sge,Comparison,0x2d,R-Type,Don't Care,A,B,ALU,None,sge,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sgeu,Comparison,0x3d,R-Type,Don't Care,A,B,ALU,None,sgeu,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sgt,Comparison,0x2b,R-Type,Don't Care,A,B,ALU,None,sgt,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sgtu,Comparison,0x3b,R-Type,Don't Care,A,B,ALU,None,sgtu,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sle,Comparison,0x2c,R-Type,Don't Care,A,B,ALU,None,sle,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sleu,Comparison,0x3c,R-Type,Don't Care,A,B,ALU,None,sleu,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+slt,Comparison,0x2a,R-Type,Don't Care,A,B,ALU,None,slt,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sltu,Comparison,0x3a,R-Type,Don't Care,A,B,ALU,None,sltu,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sne,Comparison,0x29,R-Type,Don't Care,A,B,ALU,None,sne,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+and,Logic,0x24,R-Type,Don't Care,A,B,ALU,None,and,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+or,Logic,0x25,R-Type,Don't Care,A,B,ALU,None,or,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+xor,Logic,0x26,R-Type,Don't Care,A,B,ALU,None,xor,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sll,Shift,0x04,R-Type,Don't Care,A,B,ALU,None,sll,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+sra,Shift,0x07,R-Type,Don't Care,A,B,ALU,None,sra,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+srl,Shift,0x06,R-Type,Don't Care,A,B,ALU,None,srl,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+imul,Multicycle,0x3f,R-Type,Don't Care,A,B,Multicycle,Multiply,nop,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+idiv,Multicycle,0x38,R-Type,Don't Care,A,B,Multicycle,Divide,nop,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+imod,Multicycle,0x39,R-Type,Don't Care,A,B,Multicycle,Modulo,nop,Never,FALSE,FALSE,Word,TRUE,Arithmetic,FALSE
+movi2s,Unimplemented,0x30,R-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+movs2i,Unimplemented,0x31,R-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+movf,Unimplemented,0x32,R-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+movd,Unimplemented,0x33,R-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+movfp2i,Unimplemented,0x34,R-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+movi2fp,Unimplemented,0x35,R-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+movi2t,Unimplemented,0x36,R-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+movt2i,Unimplemented,0x37,R-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+bfpt,Unimplemented,0x06,I-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+bfpf,Unimplemented,0x07,I-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+rfe,Unimplemented,0x10,I-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+trap,Unimplemented,0x11,I-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+lf,Unimplemented,0x26,I-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+ld,Unimplemented,0x27,I-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+sf,Unimplemented,0x2e,I-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+sd,Unimplemented,0x2f,I-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
+itlb,Unimplemented,0x38,I-Type,,,,,,,,FALSE,FALSE,,FALSE,,FALSE
