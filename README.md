@@ -2,7 +2,7 @@
 
 An implementation of the DLX microprocessor architecture described by John L. Hennessy and David A. Patterson in "Computer Architecture: A Quantitative Approach" (2nd edition). This implementation supports one-level caching, branch prediction, hazard detection, and hardware multiplication and division.
 
-Written in collaboration with (@Giulisol)[https://github.com/Giulsol] and (@Cesacesa)[https://github.com/Cesacesa].
+Written in collaboration with [@Giulisol](https://github.com/Giulsol) and [@Cesacesa](https://github.com/Cesacesa).
 
 ## Table of contents
 
